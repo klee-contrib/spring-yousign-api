@@ -3,7 +3,7 @@
 **Work in progress**
 
 Client API for Yousign, based on spring-boot 3+.
-Generated with tmdgen & TopModel
+Generated with [TopModel](https://github.com/klee-contrib/topmodel)
 
 ## Known issues
 
