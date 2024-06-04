@@ -1,0 +1,193 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId-documents-documentId
+  method: DELETE
+  route: signature_requests/{signatureRequestId}/documents/{documentId}
+  description: "Delete a Document"
+  preservePropertyCasing: true
+  params:
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-documents
+  method: GET
+  route: signature_requests/{signatureRequestId}/documents
+  description: "List Signature Request's Documents"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - alias:
+        class: GetSignatureRequestsSignatureRequestIdDocumentsNature
+        property: Value
+      name: Nature
+      comment: Filter by nature
+  returns:
+    composition: Document
+    name: Result
+    domain: LIST
+    comment: Non documenté
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-documents-documentId
+  method: GET
+  route: signature_requests/{signatureRequestId}/documents/{documentId}
+  description: "Get a Document"
+  preservePropertyCasing: true
+  params:
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Document
+    name: Result
+    comment: Document to attach to a Signature Request
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-documents-documents-id-download
+  method: GET
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/download
+  description: "Download a single Signature Request's Document"
+  preservePropertyCasing: true
+  params:
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-documents-download
+  method: GET
+  route: signature_requests/{signatureRequestId}/documents/download
+  description: "Download Signature Request's Documents"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: archive
+      domain: BOOLEAN
+      comment: Force zip archive download
+
+    - alias:
+        class: GetSignatureRequestsSignatureRequestIdDocumentsDownloadVersion
+        property: Value
+      name: Version
+      comment: |
+        Specify Documents version to download, "completed" is only available when the Signature Request status is "done".
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: patch-signature_requests-signatureRequestId-documents-documentId
+  method: PATCH
+  route: signature_requests/{signatureRequestId}/documents/{documentId}
+  description: "Update a Document"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateDocument
+      name: body
+      comment: Non documenté
+
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Document
+    name: Result
+    comment: Document to attach to a Signature Request
+---
+endpoint:
+  name: post-documents
+  method: POST
+  route: documents
+  description: "Upload a Document"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateDocument
+      name: body
+      comment: Non documenté
+  returns:
+    composition: Document
+    name: Result
+    comment: Document to attach to a Signature Request
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-documents
+  method: POST
+  route: signature_requests/{signatureRequestId}/documents
+  description: "Add Document to a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateDocument
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Document
+    name: Result
+    comment: Document to attach to a Signature Request
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-documents-documentId-replace
+  method: POST
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/replace
+  description: "Replace a Document in a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: PostSignatureRequestsSignatureRequestIdDocumentsDocumentIdReplaceRequest
+      name: body
+      comment: Non documenté
+
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Document
+    name: Result
+    comment: Document to attach to a Signature Request

@@ -1,0 +1,164 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId
+  method: DELETE
+  route: signature_requests/{signatureRequestId}
+  description: "Delete a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: permanent_delete
+      domain: BOOLEAN
+      comment: If true it will permanently delete the Signature Request. It will no longer be retrievable.
+---
+endpoint:
+  name: get-signature_requests
+  method: GET
+  route: signature_requests
+  description: "List Signature Requests"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+
+    - name: external_id
+      domain: LIBELLE_100
+      comment: Filter by external_id
+
+    - name: limit
+      domain: NUMBER
+      comment: The limit of items count to retrieve.
+
+    - name: q
+      domain: LIBELLE_100
+      comment: Search on name
+
+    - name: source[]
+      domain: LIBELLE_1000
+      comment: Filter by source
+
+    - alias:
+        class: GetSignatureRequestsStatus
+        property: Value
+      name: Status
+      comment: Filter by status
+  returns:
+    composition: GetSignatureRequests200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId
+  method: GET
+  route: signature_requests/{signatureRequestId}
+  description: "Fetch a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignatureRequest
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: patch-signature_requests-signatureRequestId
+  method: PATCH
+  route: signature_requests/{signatureRequestId}
+  description: "Update a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateSignatureRequest
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignatureRequest
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests
+  method: POST
+  route: signature_requests
+  description: "Initiate a new Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateSignatureRequest
+      name: body
+      comment: Non documenté
+  returns:
+    composition: SignatureRequest
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-cancel
+  method: POST
+  route: signature_requests/{signatureRequestId}/cancel
+  description: "Cancel a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: PostSignatureRequestsSignatureRequestIdCancelRequest
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignatureRequest
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-reactivate
+  method: POST
+  route: signature_requests/{signatureRequestId}/reactivate
+  description: "Reactivate an expired Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: PostSignatureRequestsSignatureRequestIdReactivateRequest
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignatureRequest
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-signatures
+  method: POST
+  route: signature_requests/{signatureRequestId}/activate
+  description: "Activate a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignatureRequestActivated
+    name: Result
+    comment: Non documenté

@@ -1,0 +1,6242 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+---
+class:
+  name: Approver
+  comment: Approver
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: ApproverStatus
+        property: Value
+      name: Status
+
+    - composition: ApproverInfo
+      name: info
+      comment: Non documenté
+
+    - name: approval_link
+      domain: HREF
+      comment: Non documenté
+
+    - name: approval_link_expiration_date
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: ApproverInfo
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format.
+
+    - alias:
+        class: ApproverInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: ApproverInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: ApproverStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "notified"}
+    Value2: {Value: "approved"}
+    Value3: {Value: "rejected"}
+---
+class:
+  name: ApproverToNotify
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: ApproverToNotifyStatus
+        property: Value
+      name: Status
+
+    - name: approval_link
+      domain: HREF
+      comment: Non documenté
+
+    - name: approval_link_expiration_date
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: ApproverToNotifyStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "notified"}
+    Value2: {Value: "approved"}
+    Value3: {Value: "rejected"}
+---
+class:
+  name: AuditTrailLocale
+  comment: enum pour les valeurs de AuditTrailLocale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "de"}
+    Value1: {Value: "en"}
+    Value2: {Value: "es"}
+    Value3: {Value: "fr"}
+    Value4: {Value: "it"}
+---
+class:
+  name: Checkbox
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: CheckboxType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: checked
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Checkbox1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: checked
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Checkbox2
+  extends: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: Checkbox2Type
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: The omission of size parameter is considered as deprecated. The size determines both the width and height of the checkbox.
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: checked
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Checkbox2Type
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "checkbox"}
+---
+class:
+  name: CheckboxType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "checkbox"}
+---
+class:
+  name: Consumption
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: ConsumptionApp
+      name: app
+      comment: Non documenté
+
+    - composition: ConsumptionApi
+      name: api
+      comment: Non documenté
+
+    - composition: ConsumptionApp
+      name: connector
+      comment: Non documenté
+---
+class:
+  name: ConsumptionApi
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: electronic_signature
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: advanced_electronic_signature
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: advanced_electronic_signature_with_qualified_certificate
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: electronic_seal
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: advanced_electronic_seal
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: ConsumptionAppQualifiedElectronicSignatureIdentificationMode
+      name: qualified_electronic_signature_identification_mode
+      comment: Non documenté
+---
+class:
+  name: ConsumptionApp
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: electronic_signature
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: advanced_electronic_signature
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: advanced_electronic_signature_with_qualified_certificate
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: ConsumptionAppQualifiedElectronicSignatureIdentificationMode
+      name: qualified_electronic_signature_identification_mode
+      comment: Non documenté
+---
+class:
+  name: ConsumptionAppQualifiedElectronicSignatureIdentificationMode
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: ConsumptionAppQualifiedElectronicSignatureIdentificationModeIdentityVerification
+      name: identity_verification
+      comment: Non documenté
+
+    - name: saved_identity
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: ConsumptionAppQualifiedElectronicSignatureIdentificationModeIdentityVerification
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: succeeded
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: rejected
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Contact
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: first_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: locale
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format
+
+    - name: company_name
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: job_title
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: address_line_1
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: address_line_2
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: address_city
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: address_postal_code
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: address_country
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: workspace_id
+      domain: CODE
+      comment: Non documenté
+---
+class:
+  name: CreateContact
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: CreateContactLocale
+        property: Value
+      name: Locale
+
+    - name: phone_number
+      domain: LIBELLE_100
+      required: true
+      comment: E.164 format
+
+    - name: company_name
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: job_title
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_line_1
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_line_2
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_city
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_postal_code
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_country
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: workspace_id
+      domain: CODE
+      comment: Non documenté
+---
+class:
+  name: CreateContactLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: CreateCustomExperience
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: landing_page_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: side_panel_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: background_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: button_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: text_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: text_button_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - alias:
+        class: CustomExperienceDisabledNotificationsType
+        property: Value
+      name: disabled_notifications
+      as: list
+      comment: Non documenté
+
+    - name: email_logo_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_header_text_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_footer_signature_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_expiration_text_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - composition: CreateCustomExperienceRedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+---
+class:
+  name: CreateCustomExperienceRedirectUrls
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: success
+      domain: HREF
+      comment: Non documenté
+
+    - name: error
+      domain: HREF
+      comment: Non documenté
+---
+class:
+  name: CreateDocument
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: file
+      domain: BYTE_ARRAY
+      required: true
+      comment: Binary file
+
+    - alias:
+        class: CreateDocumentNature
+        property: Value
+      name: Nature
+
+    - name: insert_after_id
+      domain: CODE
+      required: true
+      comment: Insert just after the position of the specified document id
+
+    - name: password
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - composition: InitialsArea
+      name: initials
+      comment: Non documenté
+
+    - name: parse_anchors
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: CreateDocumentNature
+  comment: enum pour les valeurs de Nature
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "attachment"}
+    Value1: {Value: "signable_document"}
+---
+class:
+  name: CreateElectronicSealFieldReadOnlyTextPayload
+  extends: CreateElectronicSealPayloadFieldsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: CreateElectronicSealFieldReadOnlyTextPayloadType
+        property: Value
+      name: Type
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: text
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: CreateElectronicSealFieldReadOnlyTextPayloadType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "read_only_text"}
+---
+class:
+  name: CreateElectronicSealFieldSealPayload
+  extends: CreateElectronicSealPayloadFieldsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: CreateElectronicSealFieldSealPayloadType
+        property: Value
+      name: Type
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: reason
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: CreateElectronicSealFieldSealPayloadType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "seal"}
+    Value1: {Value: "read_only_text"}
+---
+class:
+  name: CreateElectronicSealPayload
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Specify which Electronic Seal Document to use for creating an Electronic Seal.
+
+    - name: image_id
+      domain: CODE
+      comment: Specify which Electronic Seal Image to use for creating an Electronic Seal.
+
+    - name: external_id
+      domain: LIBELLE_255
+      comment: Store a custom id that will be added to webhooks
+
+    - name: timestamp
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: CreateElectronicSealPayloadFieldsInner
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - alias:
+        class: CreateElectronicSealPayloadSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - name: certificate_id
+      domain: CODE
+      comment: Specify which certificate to use for creating an Electronic Seal (only available for advanced_electronic_signature level).
+---
+class:
+  name: CreateElectronicSealPayloadFieldsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: CreateElectronicSealPayloadSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+---
+class:
+  name: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: CreateFieldFont
+  comment: If set, **width** and **height** properties become required. Otherwise, if not set or null, the default font will be used.
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: CreateFieldFontFamily
+        property: Value
+      name: Family
+
+    - name: color
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: FontVariants
+      name: variants
+      comment: Non documenté
+---
+class:
+  name: CreateFieldFontFamily
+  comment: enum pour les valeurs de Family
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "Inconsolata"}
+    Value1: {Value: "Open Sans"}
+    Value2: {Value: "Lato"}
+    Value3: {Value: "Raleway"}
+    Value4: {Value: "Merriweather"}
+    Value5: {Value: "EB Garamond"}
+    Value6: {Value: "Comic Neue"}
+---
+class:
+  name: CreateFollower
+  comment: A list of Follower objects to be added to the signature request.
+  preservePropertyCasing: true
+  properties:
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: CreateFollowerLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: CreateFollowerLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: CreateFollowersInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: CreateFollowersInnerLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: CreateFollowersInnerLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: CreateSignatureRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: Name of the signature request
+
+    - alias:
+        class: CreateSignatureRequestDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Delivery mode to notify signers.
+
+    - name: ordered_signers
+      domain: BOOLEAN
+      required: true
+      comment: Enable an ordered workflow, each signer will be requested to sign in a sequential order
+
+    - composition: CreateSignatureRequestReminderSettings
+      name: reminder_settings
+      comment: Enable automatic reminders for pending signers.
+
+    - name: timezone
+      domain: LIBELLE_100
+      required: true
+      comment: tz database format
+
+    - name: email_custom_note
+      domain: LIBELLE_1000
+      comment: A custom note added to emails sent to signers.
+
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Due date of the signature request (yyyy-mm-dd). Default to 6 month after the activation.
+
+    - name: template_id
+      domain: CODE
+      required: true
+      comment: Create a signature request from an existing template.
+
+    - name: external_id
+      domain: LIBELLE_255
+      comment: Store a custom id that will be added to webhooks & appended to redirect urls.
+
+    - name: branding_id
+      domain: CODE
+      comment: Use a specific branding to customize the signature experience.
+
+    - name: custom_experience_id
+      domain: CODE
+      comment: Use a specific Custom Experience to customize the signature experience.
+
+    - name: documents
+      domain: LIBELLE_1000
+      required: true
+      comment: You can directly attach orphan documents to the signature request.
+
+    - composition: CreateSignatureRequestSignersInner
+      name: signers
+      domain: LIST
+      comment: Can only be used if you add documents at the same time.
+
+    - name: workspace_id
+      domain: CODE
+      comment: Scope the signature request to a specific workspace. If template_id is filled and Template is already linked to a Workspace, keep this field to null ; the created Signature Request will be scoped to Template's Workspace.
+
+    - name: audit_trail_locale
+      domain: LIBELLE_1000
+      comment: Define the locale for the generated audit trail.
+
+    - name: signers_allowed_to_decline
+      domain: BOOLEAN
+      required: true
+      comment: Allowing signers to decline to sign.
+
+    - composition: SignatureRequestEmailNotification
+      name: email_notification
+      comment: Non documenté
+
+    - composition: CreateSignatureRequestTemplatePlaceholders
+      name: template_placeholders
+      comment: When creating a signature request from a template, all substituting data for placeholders defined in the given template.
+---
+class:
+  name: CreateSignatureRequestDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Delivery mode to notify signers.
+
+  values:
+    Value0: {Value: "none"}
+    Value1: {Value: "email"}
+---
+class:
+  name: CreateSignatureRequestMetadata
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: UpdateSignatureRequestMetadataDataValue
+      name: data
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: CreateSignatureRequestReminderSettings
+  comment: Enable automatic reminders for pending signers.
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: CreateSignatureRequestReminderSettingsIntervalInDays
+        property: Value
+      name: IntervalInDays
+
+    - name: max_occurrences
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: CreateSignatureRequestReminderSettingsIntervalInDays
+  comment: enum pour les valeurs de IntervalInDays
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "1"}
+    Value1: {Value: "2"}
+    Value2: {Value: "7"}
+    Value3: {Value: "14"}
+---
+class:
+  name: CreateSignatureRequestSignersInner
+  comment: Create signers
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: CreateSignatureRequestTemplatePlaceholders
+  comment: When creating a signature request from a template, all substituting data for placeholders defined in the given template.
+  preservePropertyCasing: true
+  properties:
+    - composition: CreateSignatureRequestTemplatePlaceholdersSignersInner
+      name: signers
+      domain: LIST
+      comment: Substituting data for placeholder signers.
+
+    - composition: SignatureRequestPlaceholderReadOnlyTextFieldSubstituteInput
+      name: read_only_text_fields
+      domain: LIST
+      comment: Substituting data for placeholder read_only_text fields.
+---
+class:
+  name: CreateSignatureRequestTemplatePlaceholdersSignersInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: CreateSigner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: CreateSignerDocumentRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: title
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: signer_ids
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+---
+class:
+  name: CreateWebhookSubscription
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: endpoint
+      domain: HREF
+      required: true
+      comment: Https target URL of the webhook
+
+    - name: description
+      domain: LIBELLE_255
+      comment: Short description of the webhook. This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: sandbox
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: WebhookSubscriptionSubscribedEvents
+      name: subscribed_events
+      comment: Non documenté
+
+    - name: secret_key
+      domain: LIBELLE_255
+      comment: Autogenerated 32 bytes key
+
+    - composition: WebhookSubscriptionScopes
+      name: scopes
+      comment: Non documenté
+
+    - name: auto_retry
+      domain: BOOLEAN
+      required: true
+      comment: |
+        If a Webhook request fails for any reason, Yousign will retry the request 8 times using a back-off mechanism after: 2, 6, 30, 60, 300, 1080, 1440, 2880 min
+
+    - name: enabled
+      domain: BOOLEAN
+      required: true
+      comment: Choose whether the webhook is enabled or not.
+---
+class:
+  name: CustomExperience
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: landing_page_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: side_panel_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: background_color
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: button_color
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: text_color
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: text_button_color
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - alias:
+        class: CustomExperienceDisabledNotificationsType
+        property: Value
+      name: disabled_notifications
+      required: true
+      as: list
+      comment: Non documenté
+
+    - name: email_logo_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: email_header_text_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: email_footer_signature_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: email_expiration_text_disabled
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: CustomExperienceRedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - name: logo
+      domain: HREF
+      comment: Non documenté
+
+    - alias:
+        class: CustomExperienceSource
+        property: Value
+      name: Source
+      comment: Custom Experience Source
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: CustomExperienceDisabledNotificationsType
+  comment: enum pour les valeurs de CustomExperienceDisabledNotificationsType
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "approver.expiration_date_reminder"}
+    Value1: {Value: "approver.canceled"}
+    Value2: {Value: "approver.expiration_date_updated"}
+    Value3: {Value: "follower.approved"}
+    Value4: {Value: "follower.canceled"}
+    Value5: {Value: "follower.completed"}
+    Value6: {Value: "follower.expired"}
+    Value7: {Value: "follower.rejected"}
+    Value8: {Value: "follower.signed"}
+    Value9: {Value: "sender.approved"}
+    Value10: {Value: "sender.canceled"}
+    Value11: {Value: "sender.completed"}
+    Value12: {Value: "sender.rejected"}
+    Value13: {Value: "sender.signed"}
+    Value14: {Value: "signer.expiration_date_reminder"}
+    Value15: {Value: "signer.canceled"}
+    Value16: {Value: "signer.completed"}
+    Value17: {Value: "signer.signed"}
+    Value18: {Value: "signer.expiration_date_updated"}
+    Value19: {Value: "signer.signature_requested"}
+---
+class:
+  name: CustomExperienceRedirectUrls
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: success
+      domain: HREF
+      comment: Non documenté
+
+    - name: error
+      domain: HREF
+      comment: Non documenté
+---
+class:
+  name: CustomExperienceSource
+  comment: enum pour les valeurs de Source
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Custom Experience Source
+
+  values:
+    Value0: {Value: "app"}
+    Value1: {Value: "public_api"}
+---
+class:
+  name: Document
+  comment: Document to attach to a Signature Request
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: filename
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: DocumentNature
+        property: Value
+      name: Nature
+
+    - name: content_type
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: sha256
+      domain: LIBELLE_100
+      required: true
+      comment: Sha256 checksum
+
+    - name: is_protected
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: is_signed
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: total_pages
+      domain: NUMBER
+      comment: Number of pages for signable document
+
+    - name: is_locked
+      domain: BOOLEAN
+      required: true
+      comment: If protected by password and not yet unlocked
+
+    - composition: DocumentInitials
+      name: initials
+      comment: Non documenté
+
+    - name: total_anchors
+      domain: NUMBER
+      required: true
+      comment: Number of parsed anchors from the document.
+---
+class:
+  name: DocumentInitials
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: DocumentInitialsAlignment
+        property: Value
+      name: Alignment
+      comment: Initials alignment on the document
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment:  y-axis position on the document
+---
+class:
+  name: DocumentInitialsAlignment
+  comment: enum pour les valeurs de Alignment
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Initials alignment on the document
+
+  values:
+    Value0: {Value: "left"}
+    Value1: {Value: "center"}
+    Value2: {Value: "right"}
+---
+class:
+  name: DocumentNature
+  comment: enum pour les valeurs de Nature
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "attachment"}
+    Value1: {Value: "signable_document"}
+---
+class:
+  name: ElectronicSeal
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: ElectronicSealStatus
+        property: Value
+      name: Status
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: timestamp
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: image_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: external_id
+      domain: LIBELLE_255
+      comment: Store a custom id that will be added to webhooks
+
+    - alias:
+        class: ElectronicSealSignatureLevel
+        property: Value
+      name: SignatureLevel
+---
+class:
+  name: ElectronicSealAuditTrail
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: version
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: classification
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: organization
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: seal
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: document
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+---
+class:
+  name: ElectronicSealDocument
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: total_pages
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: ElectronicSealImage
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: ElectronicSealSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+---
+class:
+  name: ElectronicSealStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "pending"}
+    Value1: {Value: "processing"}
+    Value2: {Value: "done"}
+    Value3: {Value: "error"}
+---
+class:
+  name: EmbeddedSignerWithSignatureLink
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: EmbeddedSignerWithSignatureLinkStatus
+        property: Value
+      name: Status
+
+    - name: signature_link
+      domain: HREF
+      comment: Non documenté
+
+    - name: signature_link_expiration_date
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: EmbeddedSignerWithSignatureLinkStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "notified"}
+    Value2: {Value: "verified"}
+    Value3: {Value: "processing"}
+    Value4: {Value: "consent_given"}
+    Value5: {Value: "signed"}
+    Value6: {Value: "aborted"}
+    Value7: {Value: "error"}
+---
+class:
+  name: FieldCheckbox
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldCheckboxType
+        property: Value
+      name: Type
+
+    - name: name
+      domain: LIBELLE_255
+      comment: Checkbox name
+
+    - name: checked
+      domain: BOOLEAN
+      required: true
+      comment: Signer has checked the checkbox
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: The size determines both the width and height of the checkbox.
+---
+class:
+  name: FieldCheckboxType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "checkbox"}
+---
+class:
+  name: FieldMention
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldMentionType
+        property: Value
+      name: Type
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: mention
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - composition: Font
+      name: font
+      comment: Non documenté
+---
+class:
+  name: FieldMentionType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "mention"}
+---
+class:
+  name: FieldRadioButtonGroup
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldRadioButtonGroupType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Does the Signer has to select one of the radio buttons from this group?
+
+    - name: name
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - composition: FieldRadioButtonGroupRadiosInner
+      name: radios
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: FieldRadioButtonGroupRadiosInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio button's name.
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: The size determines both the width and height of the radio button.
+
+    - name: checked
+      domain: BOOLEAN
+      required: true
+      comment: Signer has checked the radio button.
+---
+class:
+  name: FieldRadioButtonGroupType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "radio_group"}
+---
+class:
+  name: FieldReadOnlyText
+  extends: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200ResponseDataInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldReadOnlyTextType
+        property: Value
+      name: Type
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is provided, max_length must be less than or equal to the maximum number of characters based on the width and height of the text field.
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the max_length value
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: text
+      domain: LIBELLE_1000
+      required: true
+      comment: This property holds the content displayed in the read-only text field.
+
+    - composition: Font
+      name: font
+      comment: Non documenté
+---
+class:
+  name: FieldReadOnlyTextType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "read_only_text"}
+---
+class:
+  name: FieldSignature
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldSignatureType
+        property: Value
+      name: Type
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: FieldSignatureType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "signature"}
+---
+class:
+  name: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: FieldText
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FieldTextType
+        property: Value
+      name: Type
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the max_length value
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is provided, max_length must be less than or equal to the maximum number of characters based on the width and height of the text field.
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: question
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: instruction
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: answer
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: max_length
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: Font
+      name: font
+      comment: Non documenté
+---
+class:
+  name: FieldTextType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "text"}
+---
+class:
+  name: Follower
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: FollowerLocale
+        property: Value
+      name: Locale
+
+    - name: follower_link
+      domain: HREF
+      comment: Non documenté
+---
+class:
+  name: FollowerLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: Font
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: FontFamily
+        property: Value
+      name: Family
+
+    - name: color
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: FontVariants
+      name: variants
+      comment: Non documenté
+---
+class:
+  name: FontFamily
+  comment: enum pour les valeurs de Family
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "Inconsolata"}
+    Value1: {Value: "Open Sans"}
+    Value2: {Value: "Lato"}
+    Value3: {Value: "Raleway"}
+    Value4: {Value: "Merriweather"}
+    Value5: {Value: "EB Garamond"}
+    Value6: {Value: "Comic Neue"}
+---
+class:
+  name: FontVariants
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: italic
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: bold
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: FromExistingContact
+  extends: PostSignatureRequestsSignatureRequestIdApproversRequest
+  comment: Create a new Approver from an existing Contact.
+  preservePropertyCasing: true
+  properties:
+    - name: contact_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+---
+class:
+  name: FromExistingContact1
+  extends: CreateSigner
+  comment: Create a new signer from an existing contact
+  preservePropertyCasing: true
+  properties:
+    - name: contact_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing contact
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - name: insert_after_id
+      domain: CODE
+      comment: Insert just after the position of the specified signer id
+
+    - alias:
+        class: FromExistingContact1SignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: FromExistingContact1SignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: FromExistingContact1DeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+    - name: identification_attestation_id
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: FromExistingContact1DeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: FromExistingContact1SignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: FromExistingContact1SignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: FromExistingSigner
+  extends: PostSignatureRequestsSignatureRequestIdApproversRequest
+  comment: Create a new Approver from an existing Signer.
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+---
+class:
+  name: FromExistingUser
+  extends: PostSignatureRequestsSignatureRequestIdApproversRequest
+  comment: Create a new Approver from an existing User.
+  preservePropertyCasing: true
+  properties:
+    - name: user_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+---
+class:
+  name: FromExistingUser1
+  extends: CreateSigner
+  comment: Create a new signer from an existing user
+  preservePropertyCasing: true
+  properties:
+    - name: user_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing user
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - name: insert_after_id
+      domain: CODE
+      comment: Insert just after the position of the specified signer id
+
+    - alias:
+        class: FromExistingUser1SignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: FromExistingUser1SignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: FromExistingUser1DeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+    - name: identification_attestation_id
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: FromExistingUser1DeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: FromExistingUser1SignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: FromExistingUser1SignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: FromScratch
+  extends: PostSignatureRequestsSignatureRequestIdApproversRequest
+  comment: Create a new Approver from scratch.
+  preservePropertyCasing: true
+  properties:
+    - composition: FromScratchInfo
+      name: info
+      comment: Non documenté
+---
+class:
+  name: FromScratch1
+  extends: CreateSigner
+  comment: Create a new signer from scratch
+  preservePropertyCasing: true
+  properties:
+    - composition: FromScratch1Info
+      name: info
+      comment: Non documenté
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - name: insert_after_id
+      domain: CODE
+      comment: Insert just after the position of the specified signer id
+
+    - alias:
+        class: FromScratch1SignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: FromScratch1SignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: FromScratch1DeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+    - name: identification_attestation_id
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: FromScratch1CustomText
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: request_subject
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: request_body
+      domain: LIBELLE_1000
+      comment: Non documenté
+
+    - name: reminder_subject
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: reminder_body
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: FromScratch1DeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: FromScratch1Info
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format. Becomes mandatory if `signature_authentication_mode` requires a phone number.
+
+    - alias:
+        class: FromScratch1InfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: FromScratch1InfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: FromScratch1RedirectUrls
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: success
+      domain: HREF
+      comment: Non documenté
+
+    - name: error
+      domain: HREF
+      comment: Non documenté
+---
+class:
+  name: FromScratch1SignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: FromScratch1SignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: FromScratchInfo
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format.
+
+    - alias:
+        class: FromScratchInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: FromScratchInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: GetContacts200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: Contact
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetCustomExperiences200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: CustomExperience
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetSignatureRequests200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: SignatureRequestInList
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200ResponseDataInner
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200ResponseDataInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdDocumentsDownloadVersion
+  comment: enum pour les valeurs de version
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "current"}
+    Value1: {Value: "completed"}
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdDocumentsNature
+  comment: enum pour les valeurs de nature
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "attachment"}
+    Value1: {Value: "signable_document"}
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdFollowers200Response
+  comment: A list of Followers added to the Signature Request.
+  preservePropertyCasing: true
+  properties:
+    - composition: Follower
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetSignatureRequestsSignatureRequestIdSignersSignerIdDocuments200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: SignerDocument
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetSignatureRequestsStatus
+  comment: enum pour les valeurs de status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "draft"}
+    Value1: {Value: "ongoing"}
+    Value2: {Value: "done"}
+    Value3: {Value: "deleted"}
+    Value4: {Value: "expired"}
+    Value5: {Value: "canceled"}
+    Value6: {Value: "approval"}
+    Value7: {Value: "rejected"}
+    Value8: {Value: "declined"}
+---
+class:
+  name: GetTemplates200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: Template
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetUsers200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: User
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: GetWorkspaces200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: Workspace
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: InitialsArea
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: InitialsAreaAlignment
+        property: Value
+      name: Alignment
+      comment: Initials alignment on the document
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: y-axis position on the document
+---
+class:
+  name: InitialsAreaAlignment
+  comment: enum pour les valeurs de Alignment
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Initials alignment on the document
+
+  values:
+    Value0: {Value: "left"}
+    Value1: {Value: "right"}
+    Value2: {Value: "center"}
+---
+class:
+  name: ListElectronicSealImages200Response
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: Pagination
+      name: meta
+      comment: Cursor based pagination
+
+    - composition: ElectronicSealImage
+      name: data
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: Locale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: Mention
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: MentionType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the mention length.
+
+    - name: height
+      domain: NUMBER
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is not provided, it will be calculated depending on the number of newlines in the mention.
+
+    - name: mention
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - composition: CreateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set or null, the default font will be used.
+---
+class:
+  name: Mention1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the read only text length.
+
+    - name: height
+      domain: NUMBER
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is not provided, it will be calculated depending on the number of newlines in the read only text.
+
+    - name: mention
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - composition: UpdateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set the font will not be changed, and if set to null the default font will be used.
+---
+class:
+  name: Mention2
+  extends: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: Mention2Type
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the mention length
+
+    - name: height
+      domain: NUMBER
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is not provided, it will be calculated depending on the number of newlines in the mention
+
+    - name: mention
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Mention2Type
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "mention"}
+---
+class:
+  name: MentionType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "mention"}
+---
+class:
+  name: Metadata
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: MetadataDataValue
+      name: data
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: MetadataDataValue
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: Pagination
+  comment: Cursor based pagination
+  preservePropertyCasing: true
+  properties:
+    - name: next_cursor
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: PatchCustomExperienceLogoRequest
+  comment: Upload a file
+  preservePropertyCasing: true
+  properties:
+    - name: file
+      domain: BYTE_ARRAY
+      required: true
+      comment: Non documenté
+---
+class:
+  name: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequestInfo
+      name: info
+      comment: Non documenté
+---
+class:
+  name: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequestInfo
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      required: true
+      comment: E.164 format
+
+    - alias:
+        class: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequestInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequestInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: PostSignatureRequestsSignatureRequestIdApproversRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: PostSignatureRequestsSignatureRequestIdCancelRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: PostSignatureRequestsSignatureRequestIdCancelRequestReason
+        property: Value
+      name: Reason
+
+    - name: custom_note
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: PostSignatureRequestsSignatureRequestIdCancelRequestReason
+  comment: enum pour les valeurs de Reason
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "contractualization_aborted"}
+    Value1: {Value: "errors_in_document"}
+    Value2: {Value: "other"}
+---
+class:
+  name: PostSignatureRequestsSignatureRequestIdDocumentsDocumentIdReplaceRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: file
+      domain: BYTE_ARRAY
+      required: true
+      comment: Non documenté
+---
+class:
+  name: PostSignatureRequestsSignatureRequestIdReactivateRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Due date of the Signature Request (yyyy-mm-dd). Default to 6 month after the activation.
+---
+class:
+  name: RadioGroup
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: RadioGroupType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio group's name
+
+    - composition: RadioGroupRadiosInner
+      name: radios
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: RadioGroup1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio group's name
+
+    - composition: RadioGroup1RadiosInner
+      name: radios
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: RadioGroup1RadiosInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio button's name
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: RadioGroup2
+  extends: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: RadioGroup2Type
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio group's name
+
+    - composition: RadioGroup2RadiosInner
+      name: radios
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: RadioGroup2RadiosInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio button's name
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: The omission of size parameter is considered as deprecated. The size determines both the width and height of the checkbox.
+---
+class:
+  name: RadioGroup2Type
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "radio_group"}
+---
+class:
+  name: RadioGroupRadiosInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      comment: Radio button's name
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: RadioGroupType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "radio_group"}
+---
+class:
+  name: ReadOnlyText
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: ReadOnlyTextType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      comment: If not set, the width is automatically calculated with the read only text length.
+
+    - name: height
+      domain: NUMBER
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is not provided, it will be calculated depending on the number of newlines in the read only text.
+
+    - name: text
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - composition: CreateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set or null, the default font will be used.
+---
+class:
+  name: ReadOnlyText1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      comment: If not set, the width is automatically calculated with the mention length.
+
+    - name: height
+      domain: NUMBER
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is not provided, it will be calculated depending on the number of newlines in the mention.
+
+    - name: text
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - composition: UpdateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set the font will not be changed, and if set to null the default font will be used.
+---
+class:
+  name: ReadOnlyTextType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "read_only_text"}
+---
+class:
+  name: Signature
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Default value is 37
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Default value is 85
+---
+class:
+  name: Signature1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Default value is 37
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Default value is 85
+---
+class:
+  name: Signature2
+  extends: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: Signature2Type
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: Default value is 37
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: Default value is 85
+---
+class:
+  name: Signature2Type
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "signature"}
+---
+class:
+  name: SignatureRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestStatus
+        property: Value
+      name: Status
+
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestDeliveryMode
+        property: Value
+      name: DeliveryMode
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: ordered_signers
+      domain: BOOLEAN
+      required: true
+      comment: Enable an ordered workflow, each signer will be requested to sign in a sequential order
+
+    - composition: SignatureRequestInListReminderSettings
+      name: reminder_settings
+      comment: Non documenté
+
+    - name: timezone
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email_custom_note
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestSource
+        property: Value
+      name: Source
+
+    - composition: SignatureRequestInListSignersInner
+      name: signers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListApproversInner
+      name: approvers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListDocumentsInner
+      name: documents
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListSender
+      name: sender
+      comment: Non documenté
+
+    - name: external_id
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: branding_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: custom_experience_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: signers_allowed_to_decline
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: workspace_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestAuditTrailLocale
+        property: Value
+      name: AuditTrailLocale
+
+    - composition: SignatureRequestEmailNotification
+      name: email_notification
+      comment: Non documenté
+
+    - name: bulk_send_batch_id
+      domain: CODE
+      comment: Non documenté
+
+    - composition: SignatureRequestDeclineInformation
+      name: decline_information
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestActivated
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestActivatedStatus
+        property: Value
+      name: Status
+
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestActivatedDeliveryMode
+        property: Value
+      name: DeliveryMode
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: ordered_signers
+      domain: BOOLEAN
+      required: true
+      comment: Enable an ordered workflow, each signer will be requested to sign in a sequential order
+
+    - composition: SignatureRequestInListReminderSettings
+      name: reminder_settings
+      comment: Non documenté
+
+    - name: timezone
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email_custom_note
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - composition: EmbeddedSignerWithSignatureLink
+      name: signers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: ApproverToNotify
+      name: approvers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestActivatedDocumentsInner
+      name: documents
+      domain: LIST
+      comment: Non documenté
+
+    - name: external_id
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: branding_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: custom_experience_id
+      domain: CODE
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestActivatedAuditTrailLocale
+        property: Value
+      name: AuditTrailLocale
+---
+class:
+  name: SignatureRequestActivatedAuditTrailLocale
+  comment: enum pour les valeurs de AuditTrailLocale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "de"}
+    Value1: {Value: "en"}
+    Value2: {Value: "es"}
+    Value3: {Value: "fr"}
+    Value4: {Value: "it"}
+---
+class:
+  name: SignatureRequestActivatedDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestActivatedDocumentsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: nature
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestActivatedStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "ongoing"}
+    Value1: {Value: "approval"}
+---
+class:
+  name: SignatureRequestAuditTrailLocale
+  comment: enum pour les valeurs de AuditTrailLocale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "de"}
+    Value1: {Value: "en"}
+    Value2: {Value: "es"}
+    Value3: {Value: "fr"}
+    Value4: {Value: "it"}
+---
+class:
+  name: SignatureRequestDeclineInformation
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: reason
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: declined_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestEmailNotification
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: SignatureRequestEmailNotificationSender
+      name: sender
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestEmailNotificationSender
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: type
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: custom_name
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestInList
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListStatus
+        property: Value
+      name: Status
+
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListDeliveryMode
+        property: Value
+      name: DeliveryMode
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: ordered_signers
+      domain: BOOLEAN
+      required: true
+      comment: Enable an ordered workflow, each signer will be requested to sign in a sequential order
+
+    - composition: SignatureRequestInListReminderSettings
+      name: reminder_settings
+      comment: Non documenté
+
+    - name: timezone
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email_custom_note
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListSource
+        property: Value
+      name: Source
+
+    - composition: SignatureRequestInListSignersInner
+      name: signers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListApproversInner
+      name: approvers
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListDocumentsInner
+      name: documents
+      domain: LIST
+      comment: Non documenté
+
+    - composition: SignatureRequestInListSender
+      name: sender
+      comment: Non documenté
+
+    - name: external_id
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: branding_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: custom_experience_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: signers_allowed_to_decline
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - name: workspace_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListAuditTrailLocale
+        property: Value
+      name: AuditTrailLocale
+
+    - name: bulk_send_batch_id
+      domain: CODE
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestInListApproversInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListApproversInnerStatus
+        property: Value
+      name: Status
+---
+class:
+  name: SignatureRequestInListApproversInnerStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "notified"}
+    Value2: {Value: "approved"}
+    Value3: {Value: "rejected"}
+---
+class:
+  name: SignatureRequestInListAuditTrailLocale
+  comment: enum pour les valeurs de AuditTrailLocale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "de"}
+    Value1: {Value: "en"}
+    Value2: {Value: "es"}
+    Value3: {Value: "fr"}
+    Value4: {Value: "it"}
+---
+class:
+  name: SignatureRequestInListDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestInListDocumentsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListDocumentsInnerNature
+        property: Value
+      name: Nature
+---
+class:
+  name: SignatureRequestInListDocumentsInnerNature
+  comment: enum pour les valeurs de Nature
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "attachment"}
+    Value1: {Value: "signable_document"}
+---
+class:
+  name: SignatureRequestInListReminderSettings
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: SignatureRequestInListReminderSettingsIntervalInDays
+        property: Value
+      name: IntervalInDays
+
+    - name: max_occurrences
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestInListReminderSettingsIntervalInDays
+  comment: enum pour les valeurs de IntervalInDays
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "1"}
+    Value1: {Value: "2"}
+    Value2: {Value: "7"}
+    Value3: {Value: "14"}
+---
+class:
+  name: SignatureRequestInListSender
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestInListSignersInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestInListSignersInnerStatus
+        property: Value
+      name: Status
+---
+class:
+  name: SignatureRequestInListSignersInnerStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "declined"}
+    Value2: {Value: "notified"}
+    Value3: {Value: "verified"}
+    Value4: {Value: "processing"}
+    Value5: {Value: "consent_given"}
+    Value6: {Value: "signed"}
+    Value7: {Value: "aborted"}
+    Value8: {Value: "error"}
+---
+class:
+  name: SignatureRequestInListSource
+  comment: enum pour les valeurs de Source
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "app"}
+    Value1: {Value: "public_api"}
+    Value2: {Value: "connector_hubspot_api"}
+    Value3: {Value: "connector_salesforce_api"}
+    Value4: {Value: "connector_google_api"}
+    Value5: {Value: "connector_zapier_api"}
+---
+class:
+  name: SignatureRequestInListStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "draft"}
+    Value1: {Value: "ongoing"}
+    Value2: {Value: "done"}
+    Value3: {Value: "deleted"}
+    Value4: {Value: "expired"}
+    Value5: {Value: "canceled"}
+    Value6: {Value: "approval"}
+    Value7: {Value: "rejected"}
+    Value8: {Value: "declined"}
+---
+class:
+  name: SignatureRequestPlaceholderReadOnlyTextFieldSubstituteInput
+  comment: Create a placeholder read_only_text field substitute
+  preservePropertyCasing: true
+  properties:
+    - name: label
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: text
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromContactIdInput
+  extends: CreateSignatureRequestTemplatePlaceholdersSignersInner
+  comment: Create a placeholder signer substitute from a contact
+  preservePropertyCasing: true
+  properties:
+    - name: label
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: contact_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing contact
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromContactIdInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInput
+  extends: CreateSignatureRequestTemplatePlaceholdersSignersInner
+  comment: Create a placeholder signer substitute from info
+  preservePropertyCasing: true
+  properties:
+    - name: label
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - composition: SignatureRequestPlaceholderSignerSubstituteFromInfoInputInfo
+      name: info
+      comment: Create new signer
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromInfoInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromInfoInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromInfoInputDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInputDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInputInfo
+  comment: Create new signer
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format. Becomes mandatory if `signature_authentication_mode` requires a phone number.
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromInfoInputInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInputInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromInfoInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromUserIdInput
+  extends: CreateSignatureRequestTemplatePlaceholdersSignersInner
+  comment: Create a placeholder signer substitute from a user
+  preservePropertyCasing: true
+  properties:
+    - name: label
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: user_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing user
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestPlaceholderSignerSubstituteFromUserIdInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestSignerFromContactIdInput
+  extends: CreateSignatureRequestSignersInner
+  comment: Create signer from a contact
+  preservePropertyCasing: true
+  properties:
+    - name: contact_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing contact
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestSignerFromContactIdInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestSignerFromContactIdInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestSignerFromContactIdInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestSignerFromContactIdInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestSignerFromInfoInput
+  extends: CreateSignatureRequestSignersInner
+  comment: Create a signer from info
+  preservePropertyCasing: true
+  properties:
+    - composition: SignatureRequestSignerFromInfoInputInfo
+      name: info
+      comment: create new signer
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestSignerFromInfoInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestSignerFromInfoInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestSignerFromInfoInputInfo
+  comment: create new signer
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format. Becomes mandatory if `signature_authentication_mode` requires a phone number.
+
+    - alias:
+        class: SignatureRequestSignerFromInfoInputInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: SignatureRequestSignerFromInfoInputInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: SignatureRequestSignerFromInfoInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestSignerFromInfoInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestSignerFromUserIdInput
+  extends: CreateSignatureRequestSignersInner
+  comment: Create a signer from a user
+  preservePropertyCasing: true
+  properties:
+    - name: user_id
+      domain: CODE
+      required: true
+      comment: Create signer from an existing user
+
+    - composition: FieldsInput
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - alias:
+        class: SignatureRequestSignerFromUserIdInputSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignatureRequestSignerFromUserIdInputSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+---
+class:
+  name: SignatureRequestSignerFromUserIdInputSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignatureRequestSignerFromUserIdInputSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignatureRequestSource
+  comment: enum pour les valeurs de Source
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "app"}
+    Value1: {Value: "public_api"}
+    Value2: {Value: "connector_hubspot_api"}
+    Value3: {Value: "connector_salesforce_api"}
+    Value4: {Value: "connector_google_api"}
+    Value5: {Value: "connector_zapier_api"}
+---
+class:
+  name: SignatureRequestStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "draft"}
+    Value1: {Value: "ongoing"}
+    Value2: {Value: "done"}
+    Value3: {Value: "deleted"}
+    Value4: {Value: "expired"}
+    Value5: {Value: "canceled"}
+    Value6: {Value: "approval"}
+    Value7: {Value: "rejected"}
+    Value8: {Value: "declined"}
+---
+class:
+  name: SignatureType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "signature"}
+---
+class:
+  name: Signer
+  comment: Signer
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - composition: SignerInfo
+      name: info
+      comment: Non documenté
+
+    - alias:
+        class: SignerStatus
+        property: Value
+      name: Status
+
+    - composition: SignerFieldsInner
+      name: fields
+      domain: LIST
+      comment: Non documenté
+
+    - alias:
+        class: SignerSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: SignerSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - name: signature_link
+      domain: HREF
+      comment: Non documenté
+
+    - name: signature_link_expiration_date
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: signature_image_preview
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - composition: SignerRedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: SignerCustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: SignerDeliveryMode
+        property: Value
+      name: DeliveryMode
+
+    - name: identification_attestation_id
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: SignerAuditTrail
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: version
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: signature_request
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: sender
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: signer
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: documents
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: organization
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: authentication
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+
+    - name: electronic_signature_level
+      domain: LIBELLE_1000
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignerCustomText
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: request_subject
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: request_body
+      domain: LIBELLE_1000
+      comment: Non documenté
+
+    - name: reminder_subject
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: reminder_body
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: SignerDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: SignerDocument
+  comment: Signer Document
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Unique identifier of the signer document
+
+    - name: title
+      domain: LIBELLE_255
+      required: true
+      comment: Title of the document request
+
+    - name: filename
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: SignerDocumentRequest
+  comment: Signer Document Request attached to a Signature Request
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Unique identifier of the Signer Document Request
+
+    - name: title
+      domain: LIBELLE_255
+      required: true
+      comment: Title of the document request
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Define if the document request is optional for the Signers
+
+    - name: signer_ids
+      domain: LIBELLE_1000
+      required: true
+      comment: Ids of Signers to request a document
+---
+class:
+  name: SignerFieldsInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: SignerInfo
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format. Becomes mandatory if `signature_authentication_mode` requires a phone number.
+
+    - alias:
+        class: SignerInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: SignerInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: SignerRedirectUrls
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: success
+      domain: HREF
+      comment: Non documenté
+
+    - name: error
+      domain: HREF
+      comment: Non documenté
+---
+class:
+  name: SignerSign
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: otp
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - composition: SignerSIPAddress
+      name: ip_address
+      comment: Non documenté
+
+    - name: consent_given_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: SignerSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: SignerSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: SignerSIPAddress
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: SignerStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "initiated"}
+    Value1: {Value: "declined"}
+    Value2: {Value: "notified"}
+    Value3: {Value: "verified"}
+    Value4: {Value: "processing"}
+    Value5: {Value: "consent_given"}
+    Value6: {Value: "signed"}
+    Value7: {Value: "aborted"}
+    Value8: {Value: "error"}
+---
+class:
+  name: Template
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: description
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - alias:
+        class: TemplateStatus
+        property: Value
+      name: Status
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: workspace_id
+      domain: CODE
+      comment: Non documenté
+---
+class:
+  name: TemplateStatus
+  comment: enum pour les valeurs de Status
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "draft"}
+    Value1: {Value: "active"}
+---
+class:
+  name: Text
+  extends: CreateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: TextType
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the max_length value
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is provided, max_length must be less than or equal to the maximum number of characters based on the width and height of the text field.
+
+    - name: max_length
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: question
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: instruction
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: CreateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set or null, the default font will be used.
+---
+class:
+  name: Text1
+  extends: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: signer_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the max_length value
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is provided, max_length must be less than or equal to the maximum number of characters based on the width and height of the text field.
+
+    - name: max_length
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: question
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: instruction
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: UpdateFieldFont
+      name: font
+      comment: If set, **width** and **height** properties become required. Otherwise, if not set the font will not be changed, and if set to null the default font will be used.
+---
+class:
+  name: Text2
+  extends: FieldsInput
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: document_id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: Text2Type
+        property: Value
+      name: Type
+
+    - name: page
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: x
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: y
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: width
+      domain: NUMBER
+      required: true
+      comment: If not set, the width is automatically calculated with the max_length value
+
+    - name: height
+      domain: NUMBER
+      required: true
+      comment: The height must be 24 or a multiple of 15 greater than 24. If height is provided, max_length must be less than or equal to the maximum number of characters based on the width and height of the text field.
+
+    - name: max_length
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - name: question
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: instruction
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: optional
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+---
+class:
+  name: Text2Type
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "text"}
+---
+class:
+  name: TextType
+  comment: enum pour les valeurs de Type
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "text"}
+---
+class:
+  name: UpdateContact
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: UpdateContactLocale
+        property: Value
+      name: Locale
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format
+
+    - name: company_name
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: job_title
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_line_1
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_line_2
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_city
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_postal_code
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: address_country
+      domain: LIBELLE_255
+      comment: This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: workspace_id
+      domain: CODE
+      comment: Non documenté
+---
+class:
+  name: UpdateContactLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: UpdateCustomExperience
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: landing_page_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: side_panel_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: background_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: button_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: text_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - name: text_button_color
+      domain: LIBELLE_100
+      comment: Hexadecimal color value
+
+    - alias:
+        class: CustomExperienceDisabledNotificationsType
+        property: Value
+      name: disabled_notifications
+      as: list
+      comment: Non documenté
+
+    - name: email_logo_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_header_text_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_footer_signature_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - name: email_expiration_text_disabled
+      domain: BOOLEAN
+      comment: Non documenté
+
+    - composition: CreateCustomExperienceRedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+---
+class:
+  name: UpdateDocument
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: UpdateDocumentNature
+        property: Value
+      name: Nature
+
+    - name: insert_after_id
+      domain: CODE
+      comment: Insert just after the position of the specified document id
+
+    - name: password
+      domain: LIBELLE_100
+      required: true
+      comment: The password required to unlock the document if it is protected
+
+    - composition: InitialsArea
+      name: initials
+      comment: Non documenté
+---
+class:
+  name: UpdateDocumentNature
+  comment: enum pour les valeurs de Nature
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "attachment"}
+    Value1: {Value: "signable_document"}
+---
+class:
+  name: UpdateField
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: UpdateFieldFont
+  comment: If set, **width** and **height** properties become required. Otherwise, if not set the font will not be changed, and if set to null the default font will be used.
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: UpdateFieldFontFamily
+        property: Value
+      name: Family
+
+    - name: color
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: size
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+    - composition: FontVariants
+      name: variants
+      comment: Non documenté
+---
+class:
+  name: UpdateFieldFontFamily
+  comment: enum pour les valeurs de Family
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "Inconsolata"}
+    Value1: {Value: "Open Sans"}
+    Value2: {Value: "Lato"}
+    Value3: {Value: "Raleway"}
+    Value4: {Value: "Merriweather"}
+    Value5: {Value: "EB Garamond"}
+    Value6: {Value: "Comic Neue"}
+---
+class:
+  name: UpdateSignatureRequest
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: UpdateSignatureRequestDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Delivery mode to notify signers.
+
+    - name: ordered_signers
+      domain: BOOLEAN
+      required: true
+      comment: Enable an ordered workflow, each signer will be requested to sign in a sequential order
+
+    - composition: UpdateSignatureRequestReminderSettings
+      name: reminder_settings
+      comment: Non documenté
+
+    - name: timezone
+      domain: LIBELLE_100
+      required: true
+      comment: tz database format
+
+    - name: email_custom_note
+      domain: LIBELLE_1000
+      comment: Non documenté
+
+    - name: expiration_date
+      domain: LIBELLE_100
+      required: true
+      comment: Due date of the signature request (yyyy-mm-dd).
+
+    - name: external_id
+      domain: LIBELLE_255
+      comment: Non documenté
+
+    - name: branding_id
+      domain: CODE
+      comment: Non documenté
+
+    - name: custom_experience_id
+      domain: CODE
+      comment: Use a specific Custom Experience to customize the signature experience.
+
+    - name: signers_allowed_to_decline
+      domain: BOOLEAN
+      required: true
+      comment: Allowing signers to decline to sign.
+
+    - name: workspace_id
+      domain: CODE
+      comment: Transfer the Signature Request into a given Workspace.
+
+    - name: audit_trail_locale
+      domain: LIBELLE_1000
+      comment: Define the locale for the generated audit trail.
+
+    - composition: SignatureRequestEmailNotification
+      name: email_notification
+      comment: Non documenté
+---
+class:
+  name: UpdateSignatureRequestDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Delivery mode to notify signers.
+
+  values:
+    Value0: {Value: "none"}
+    Value1: {Value: "email"}
+---
+class:
+  name: UpdateSignatureRequestMetadata
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: UpdateSignatureRequestMetadataDataValue
+      name: data
+      domain: LIBELLE_1000
+      comment: Non documenté
+---
+class:
+  name: UpdateSignatureRequestMetadataDataValue
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: UpdateSignatureRequestReminderSettings
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - alias:
+        class: UpdateSignatureRequestReminderSettingsIntervalInDays
+        property: Value
+      name: IntervalInDays
+
+    - name: max_occurrences
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+---
+class:
+  name: UpdateSignatureRequestReminderSettingsIntervalInDays
+  comment: enum pour les valeurs de IntervalInDays
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: NUMBER
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "1"}
+    Value1: {Value: "2"}
+    Value2: {Value: "7"}
+    Value3: {Value: "14"}
+---
+class:
+  name: UpdateSigner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - composition: UpdateSignerInfo
+      name: info
+      comment: Non documenté
+
+    - name: insert_after_id
+      domain: CODE
+      comment: Non documenté
+
+    - alias:
+        class: UpdateSignerSignatureLevel
+        property: Value
+      name: SignatureLevel
+
+    - alias:
+        class: UpdateSignerSignatureAuthenticationMode
+        property: Value
+      name: SignatureAuthenticationMode
+
+    - composition: FromScratch1RedirectUrls
+      name: redirect_urls
+      comment: Non documenté
+
+    - composition: FromScratch1CustomText
+      name: custom_text
+      comment: Non documenté
+
+    - alias:
+        class: UpdateSignerDeliveryMode
+        property: Value
+      name: DeliveryMode
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+    - name: identification_attestation_id
+      domain: LIBELLE_255
+      comment: Non documenté
+---
+class:
+  name: UpdateSignerDeliveryMode
+  comment: enum pour les valeurs de DeliveryMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Override the delivery mode of the Signature Request for this Signer
+
+  values:
+    Value0: {Value: "email"}
+    Value1: {Value: "none"}
+---
+class:
+  name: UpdateSignerInfo
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: first_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_255
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      comment: E.164 format
+
+    - alias:
+        class: UpdateSignerInfoLocale
+        property: Value
+      name: Locale
+---
+class:
+  name: UpdateSignerInfoLocale
+  comment: enum pour les valeurs de Locale
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "en"}
+    Value1: {Value: "fr"}
+    Value2: {Value: "de"}
+    Value3: {Value: "it"}
+    Value4: {Value: "nl"}
+    Value5: {Value: "es"}
+    Value6: {Value: "pl"}
+---
+class:
+  name: UpdateSignerSignatureAuthenticationMode
+  comment: enum pour les valeurs de SignatureAuthenticationMode
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "otp_email"}
+    Value1: {Value: "otp_sms"}
+    Value2: {Value: "no_otp"}
+---
+class:
+  name: UpdateSignerSignatureLevel
+  comment: enum pour les valeurs de SignatureLevel
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "electronic_signature"}
+    Value1: {Value: "advanced_electronic_signature"}
+    Value2: {Value: "electronic_signature_with_qualified_certificate"}
+    Value3: {Value: "qualified_electronic_signature"}
+    Value4: {Value: "qualified_electronic_signature_mode_1"}
+---
+class:
+  name: UpdateWebhookSubscription
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: endpoint
+      domain: HREF
+      required: true
+      comment: Https target URL of the webhook
+
+    - name: description
+      domain: LIBELLE_255
+      comment: Short description of the webhook. This property cannot start or end with whitespace, does not allow HTML tags, URL or email.
+
+    - name: sandbox
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: WebhookSubscriptionSubscribedEvents
+      name: subscribed_events
+      comment: Non documenté
+
+    - name: secret_key
+      domain: LIBELLE_255
+      comment: Autogenerated 32 bytes key
+
+    - composition: WebhookSubscriptionScopes
+      name: scopes
+      comment: Non documenté
+
+    - name: auto_retry
+      domain: BOOLEAN
+      required: true
+      comment: |
+        If a Webhook request fails for any reason, Yousign will retry the request 8 times using a back-off mechanism after: 2, 6, 30, 60, 300, 1080, 1440, 2880 min
+
+    - name: enabled
+      domain: BOOLEAN
+      required: true
+      comment: Choose whether the webhook is enabled or not.
+---
+class:
+  name: UploadElectronicSealDocument
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: file
+      domain: BYTE_ARRAY
+      required: true
+      comment: PDF file
+
+    - name: password
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: UploadElectronicSealImage
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: file
+      domain: BYTE_ARRAY
+      required: true
+      comment: Seal image
+
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+---
+class:
+  name: User
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: first_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: last_name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: email
+      domain: MAIL
+      required: true
+      comment: Non documenté
+
+    - name: phone_number
+      domain: LIBELLE_100
+      required: true
+      comment: E.164 format
+
+    - name: locale
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: avatar
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: job_title
+      domain: LIBELLE_100
+      comment: Non documenté
+
+    - name: is_active
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - alias:
+        class: UserRole
+        property: Value
+      name: Role
+
+    - composition: UserWorkspacesInner
+      name: workspaces
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: UserRole
+  comment: enum pour les valeurs de Role
+  preservePropertyCasing: true
+  properties:
+    - name: Value
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+  values:
+    Value0: {Value: "owner"}
+    Value1: {Value: "admin"}
+    Value2: {Value: "member"}
+---
+class:
+  name: UserWorkspacesInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+---
+class:
+  name: WebhookSubscription
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: endpoint
+      domain: HREF
+      required: true
+      comment: Https target URL of the webhook
+
+    - name: description
+      domain: LIBELLE_255
+      comment: Short description of the webhook
+
+    - name: sandbox
+      domain: BOOLEAN
+      required: true
+      comment: Non documenté
+
+    - composition: WebhookSubscriptionSubscribedEvents
+      name: subscribed_events
+      comment: Non documenté
+
+    - name: secret_key
+      domain: LIBELLE_100
+      required: true
+      comment: Autogenerated 32 bytes key
+
+    - composition: WebhookSubscriptionScopes
+      name: scopes
+      comment: Non documenté
+
+    - name: auto_retry
+      domain: BOOLEAN
+      required: true
+      comment: |
+        If a Webhook request fails for any reason, Yousign will retry the request 8 times using a back-off mechanism after: 2, 6, 30, 60, 300, 1080, 1440, 2880 min
+
+    - name: enabled
+      domain: BOOLEAN
+      required: true
+      comment: Is the webhook enabled?
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: updated_at
+      domain: LIBELLE_100
+      comment: Non documenté
+---
+class:
+  name: WebhookSubscriptionScopes
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: WebhookSubscriptionSubscribedEvents
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties: []
+---
+class:
+  name: Workspace
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté
+
+    - name: name
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: created_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - name: updated_at
+      domain: LIBELLE_100
+      required: true
+      comment: Non documenté
+
+    - composition: WorkspaceUsersInner
+      name: users
+      domain: LIST
+      comment: Non documenté
+---
+class:
+  name: WorkspaceUsersInner
+  comment: Non documenté
+  preservePropertyCasing: true
+  properties:
+    - name: id
+      domain: CODE
+      required: true
+      comment: Non documenté

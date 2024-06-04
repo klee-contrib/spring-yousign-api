@@ -1,0 +1,29 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-workspaces
+  method: GET
+  route: workspaces
+  description: "List Workspaces"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+
+    - name: limit with 10 as default
+      domain: NUMBER
+      comment: The limit of items count to retrieve.
+  returns:
+    composition: GetWorkspaces200Response
+    name: Result
+    comment: Non documenté

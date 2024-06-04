@@ -1,0 +1,46 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-followers
+  method: GET
+  route: signature_requests/{signatureRequestId}/followers
+  description: "List the Signature Request's Followers"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: GetSignatureRequestsSignatureRequestIdFollowers200Response
+    name: Result
+    comment: A list of Followers added to the Signature Request.
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-followers
+  method: POST
+  route: signature_requests/{signatureRequestId}/followers
+  description: "Create new Followers"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateFollowersInner
+      name: body
+      domain: LIST
+      comment: A list of Follower objects to be added to the signature request.
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Follower
+    name: Result
+    domain: LIST
+    comment: A list of Followers added to the Signature Request.

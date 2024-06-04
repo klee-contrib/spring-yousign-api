@@ -1,0 +1,65 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-audit_trails-download
+  method: GET
+  route: signature_requests/{signatureRequestId}/audit_trails/download
+  description: "Download Signature Request Audit Trails"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-signers-signerId-audit_trails
+  method: GET
+  route: signature_requests/{signatureRequestId}/signers/{signerId}/audit_trails
+  description: "Get Signer Audit Trail"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: signerId
+      domain: CODE
+      comment: Signer Id
+  returns:
+    composition: SignerAuditTrail
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-signers-signerId-audit_trails-download
+  method: GET
+  route: signature_requests/{signatureRequestId}/signers/{signerId}/audit_trails/download
+  description: "Download Audit Trail PDF"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: signerId
+      domain: CODE
+      comment: Signer Id
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté

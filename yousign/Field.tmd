@@ -1,0 +1,106 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId-documents-documentId-fields-fieldId
+  method: DELETE
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/fields/{fieldId}
+  description: "Delete a Field"
+  preservePropertyCasing: true
+  params:
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: fieldId
+      domain: CODE
+      comment: Field Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-documents-documentId-fields
+  method: GET
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/fields
+  description: "Lists the Fields of a Signature Request Document."
+  preservePropertyCasing: true
+  params:
+    - name: documentId
+      domain: CODE
+      comment: Document ID
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+
+    - name: types[]
+      domain: LIST
+      comment: Filter by Field type.
+  returns:
+    composition: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-documents-documentId-fields
+  method: POST
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/fields
+  description: "Create a new Field on a Document"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateField
+      name: body
+      comment: Non documenté
+
+    - name: documentId
+      domain: CODE
+      comment: Document ID
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200ResponseDataInner
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: update-signature_requests-signatureRequestId-documents-documentId-fields-fieldId
+  method: PATCH
+  route: signature_requests/{signatureRequestId}/documents/{documentId}/fields/{fieldId}
+  description: "Update a Field"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateField
+      name: body
+      comment: Non documenté
+
+    - name: documentId
+      domain: CODE
+      comment: Document Id
+
+    - name: fieldId
+      domain: CODE
+      comment: Field Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: GetSignatureRequestsSignatureRequestIdDocumentsDocumentIdFields200ResponseDataInner
+    name: Result
+    comment: Non documenté

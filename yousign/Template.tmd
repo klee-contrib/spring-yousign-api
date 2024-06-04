@@ -1,0 +1,25 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-templates
+  method: GET
+  route: templates
+  description: "List Templates"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+  returns:
+    composition: GetTemplates200Response
+    name: Result
+    comment: Non documenté

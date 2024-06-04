@@ -1,0 +1,82 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-webhooks-webhookId
+  method: DELETE
+  route: webhooks/{webhookId}
+  description: "Delete a Webhook subscription"
+  preservePropertyCasing: true
+  params:
+    - name: webhookId
+      domain: CODE
+      comment: Webhook Id
+---
+endpoint:
+  name: get-webhooks
+  method: GET
+  route: webhooks
+  description: "List Webhook subscriptions"
+  preservePropertyCasing: true
+  returns:
+    composition: WebhookSubscription
+    name: Result
+    domain: LIST
+    comment: Non documenté
+---
+endpoint:
+  name: get-webhooks-webhookId
+  method: GET
+  route: webhooks/{webhookId}
+  description: "Get a Webhook subscription"
+  preservePropertyCasing: true
+  params:
+    - name: webhookId
+      domain: CODE
+      comment: Webhook Id
+  returns:
+    composition: WebhookSubscription
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: patch-webhooks-webhookId
+  method: PATCH
+  route: webhooks/{webhookId}
+  description: "Update a Webhook subscription"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateWebhookSubscription
+      name: body
+      comment: Non documenté
+
+    - name: webhookId
+      domain: CODE
+      comment: Webhook Id
+  returns:
+    composition: WebhookSubscription
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-webhooks-subscriptions
+  method: POST
+  route: webhooks
+  description: "Create a Webhook subscription"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateWebhookSubscription
+      name: body
+      comment: Non documenté
+  returns:
+    composition: WebhookSubscription
+    name: Result
+    comment: Non documenté

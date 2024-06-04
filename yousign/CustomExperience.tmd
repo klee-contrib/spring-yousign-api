@@ -1,0 +1,115 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-custom_experience
+  method: DELETE
+  route: custom_experiences/{customExperienceId}
+  description: "Delete a Custom Experience"
+  preservePropertyCasing: true
+  params:
+    - name: customExperienceId
+      domain: CODE
+      comment: Custom Experience Id
+---
+endpoint:
+  name: delete-custom_experience-logo
+  method: DELETE
+  route: custom_experiences/{customExperienceId}/logo
+  description: "Delete a Custom Experience logo"
+  preservePropertyCasing: true
+  params:
+    - name: customExperienceId
+      domain: CODE
+      comment: Custom Experience Id
+---
+endpoint:
+  name: get-custom_experiences
+  method: GET
+  route: custom_experiences
+  description: "List Custom Experiences"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+  returns:
+    composition: GetCustomExperiences200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-custom_experiences-customExperienceId
+  method: GET
+  route: custom_experiences/{customExperienceId}
+  description: "Get a Custom Experience"
+  preservePropertyCasing: true
+  params:
+    - name: customExperienceId
+      domain: CODE
+      comment: Custom Experience Id
+  returns:
+    composition: CustomExperience
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: patch-custom_experiences-customExperienceId
+  method: PATCH
+  route: custom_experiences/{customExperienceId}
+  description: "Update a Custom Experience"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateCustomExperience
+      name: body
+      comment: Non documenté
+
+    - name: customExperienceId
+      domain: CODE
+      comment: Custom Experience Id
+  returns:
+    composition: CustomExperience
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: patch-custom-experience-logo
+  method: POST
+  route: custom_experiences/{customExperienceId}/logo
+  description: "Update a Custom Experience logo"
+  preservePropertyCasing: true
+  params:
+    - composition: PatchCustomExperienceLogoRequest
+      name: body
+      comment: Upload a file
+
+    - name: customExperienceId
+      domain: CODE
+      comment: Custom Experience Id
+  returns:
+    composition: CustomExperience
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-custom-experience
+  method: POST
+  route: custom_experiences
+  description: "Create a Custom Experience"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateCustomExperience
+      name: body
+      comment: Non documenté
+  returns:
+    composition: CustomExperience
+    name: Result
+    comment: Non documenté

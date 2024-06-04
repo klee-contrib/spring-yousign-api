@@ -1,0 +1,61 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-consumptions
+  method: GET
+  route: consumptions
+  description: "Get Consumptions"
+  preservePropertyCasing: true
+  params:
+    - name: authentication_key
+      domain: CODE
+      comment: Non documenté
+
+    - name: from
+      domain: LIBELLE_100
+      comment: |
+        The "from" date must not be more than 1 year in the past
+
+    - name: to
+      domain: LIBELLE_100
+      comment: |
+        The "to" date must be more recent than the "from" date
+  returns:
+    composition: Consumption
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-consumptions-export
+  method: GET
+  route: consumptions/export
+  description: "Export Consumption data"
+  preservePropertyCasing: true
+  params:
+    - name: authentication_key
+      domain: CODE
+      comment: Non documenté
+
+    - name: from
+      domain: LIBELLE_100
+      comment: |
+        The "from" date must not be more than 1 year in the past
+
+    - name: to
+      domain: LIBELLE_100
+      comment: |
+        The "to" date must be more recent than the "from" date
+  returns:
+    name: Result
+    domain: LIBELLE_100
+    required: true
+    comment: Non documenté

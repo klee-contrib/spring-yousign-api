@@ -1,0 +1,86 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId-approvers-approverId
+  method: DELETE
+  route: signature_requests/{signatureRequestId}/approvers/{approverId}
+  description: "Delete an Approver"
+  preservePropertyCasing: true
+  params:
+    - name: approverId
+      domain: CODE
+      comment: Approver Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-approvers-approverId
+  method: GET
+  route: signature_requests/{signatureRequestId}/approvers/{approverId}
+  description: "Get an Approver"
+  preservePropertyCasing: true
+  params:
+    - name: approverId
+      domain: CODE
+      comment: Approver Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Approver
+    name: Result
+    comment: Approver
+---
+endpoint:
+  name: patch-signature_requests-signatureRequestId-approvers-approverId
+  method: PATCH
+  route: signature_requests/{signatureRequestId}/approvers/{approverId}
+  description: "Update an Approver"
+  preservePropertyCasing: true
+  params:
+    - composition: PatchSignatureRequestsSignatureRequestIdApproversApproverIdRequest
+      name: body
+      comment: Non documenté
+
+    - name: approverId
+      domain: CODE
+      comment: Approver Id
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Approver
+    name: Result
+    comment: Approver
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-approvers
+  method: POST
+  route: signature_requests/{signatureRequestId}/approvers
+  description: "Create a new Approver"
+  preservePropertyCasing: true
+  params:
+    - composition: PostSignatureRequestsSignatureRequestIdApproversRequest
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Approver
+    name: Result
+    comment: Approver

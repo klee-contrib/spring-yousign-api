@@ -1,0 +1,89 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-contacts-contactId
+  method: DELETE
+  route: contacts/{contactId}
+  description: "Delete a Contact"
+  preservePropertyCasing: true
+  params:
+    - name: contactId
+      domain: CODE
+      comment: Contact Id
+---
+endpoint:
+  name: get-contacts
+  method: GET
+  route: contacts
+  description: "List Contacts"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+
+    - name: limit
+      domain: NUMBER
+      comment: The limit of items count to retrieve.
+  returns:
+    composition: GetContacts200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-contacts-contactId
+  method: GET
+  route: contacts/{contactId}
+  description: "Get a Contact"
+  preservePropertyCasing: true
+  params:
+    - name: contactId
+      domain: CODE
+      comment: Contact Id
+  returns:
+    composition: Contact
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: patch-contacts-contactId
+  method: PATCH
+  route: contacts/{contactId}
+  description: "Update a Contact"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateContact
+      name: body
+      comment: Non documenté
+
+    - name: contactId
+      domain: CODE
+      comment: Contact Id
+  returns:
+    composition: Contact
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-contact
+  method: POST
+  route: contacts
+  description: "Create a Contact"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateContact
+      name: body
+      comment: Non documenté
+  returns:
+    composition: Contact
+    name: Result
+    comment: Non documenté

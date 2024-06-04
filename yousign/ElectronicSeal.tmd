@@ -1,0 +1,159 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-electronic-seal-image
+  method: DELETE
+  route: electronic_seal_images/{electronicSealImageId}
+  description: "Delete an Electronic Seal Image"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealImageId
+      domain: CODE
+      comment: Non documenté
+---
+endpoint:
+  name: download-electronic_seal-audit_trail
+  method: GET
+  route: electronic_seals/{electronicSealId}/audit_trails/download
+  description: "Download an Electronic Seal Audit Trail"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealId
+      domain: CODE
+      comment: Non documenté
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: download-electronic-seal-document
+  method: GET
+  route: electronic_seal_documents/{electronicSealDocumentId}/download
+  description: "Download an Electronic Seal Document"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealDocumentId
+      domain: CODE
+      comment: Non documenté
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: download-electronic-seal-image
+  method: GET
+  route: electronic_seal_images/{electronicSealImageId}/download
+  description: "Download an Electronic Seal Image"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealImageId
+      domain: CODE
+      comment: Non documenté
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: get-electronic_seal-audit_trail
+  method: GET
+  route: electronic_seals/{electronicSealId}/audit_trails
+  description: "Get an Electronic Seal Audit Trail"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealId
+      domain: CODE
+      comment: Non documenté
+  returns:
+    composition: ElectronicSealAuditTrail
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-electronic-seal
+  method: GET
+  route: electronic_seals/{electronicSealId}
+  description: "Get an Electronic Seal"
+  preservePropertyCasing: true
+  params:
+    - name: electronicSealId
+      domain: CODE
+      comment: Non documenté
+  returns:
+    composition: ElectronicSeal
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: list-electronic_seal-images
+  method: GET
+  route: electronic_seal_images
+  description: "List Electronic Seal Images"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+  returns:
+    composition: ListElectronicSealImages200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-electronic-seals
+  method: POST
+  route: electronic_seals
+  description: "Create an Electronic Seal"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateElectronicSealPayload
+      name: body
+      comment: Non documenté
+  returns:
+    composition: ElectronicSeal
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: upload-electronic_seal-document
+  method: POST
+  route: electronic_seal_documents
+  description: "Upload an Electronic Seal Document"
+  preservePropertyCasing: true
+  params:
+    - composition: UploadElectronicSealDocument
+      name: body
+      comment: Non documenté
+  returns:
+    composition: ElectronicSealDocument
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: upload-electronic_seal-image
+  method: POST
+  route: electronic_seal_images
+  description: "Upload an Electronic Seal Image"
+  preservePropertyCasing: true
+  params:
+    - composition: UploadElectronicSealImage
+      name: body
+      comment: Non documenté
+  returns:
+    composition: ElectronicSealImage
+    name: Result
+    comment: Non documenté

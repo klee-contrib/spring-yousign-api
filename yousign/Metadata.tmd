@@ -1,0 +1,74 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId-metadata
+  method: DELETE
+  route: signature_requests/{signatureRequestId}/metadata
+  description: "Delete the Signature Request Metadata"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-metadata
+  method: GET
+  route: signature_requests/{signatureRequestId}/metadata
+  description: "Get the Signature Request Metadata"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Metadata
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-metadata
+  method: POST
+  route: signature_requests/{signatureRequestId}/metadata
+  description: "Attach Metadata to a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateSignatureRequestMetadata
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Metadata
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: put-signature_requests-signatureRequestId-metadata
+  method: PUT
+  route: signature_requests/{signatureRequestId}/metadata
+  description: "Update Metadata of a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: UpdateSignatureRequestMetadata
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: Metadata
+    name: Result
+    comment: Non documenté

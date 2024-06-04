@@ -1,0 +1,87 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: delete-signature_requests-signatureRequestId-signers-signerId-documents
+  method: DELETE
+  route: signature_requests/{signatureRequestId}/signers/{signerId}/documents
+  description: "Delete the Documents uploaded by a Signer"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: signerId
+      domain: CODE
+      comment: Signer Id
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-signers-signerId-documents
+  method: GET
+  route: signature_requests/{signatureRequestId}/signers/{signerId}/documents
+  description: "List the Signer Documents of a Signer"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: signerId
+      domain: CODE
+      comment: Signer Id
+  returns:
+    composition: GetSignatureRequestsSignatureRequestIdSignersSignerIdDocuments200Response
+    name: Result
+    comment: Non documenté
+---
+endpoint:
+  name: get-signature_requests-signatureRequestId-signers-signerId-documents-signerDocumentId
+  method: GET
+  route: signature_requests/{signatureRequestId}/signers/{signerId}/documents/{signerDocumentId}/download
+  description: "Download a Signer Document"
+  preservePropertyCasing: true
+  params:
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+
+    - name: signerDocumentId
+      domain: CODE
+      comment: Signer Document Id
+
+    - name: signerId
+      domain: CODE
+      comment: Signer Id
+  returns:
+    name: Result
+    domain: BYTE_ARRAY
+    required: true
+    comment: Non documenté
+---
+endpoint:
+  name: post-signature_requests-signatureRequestId-document_requests
+  method: POST
+  route: signature_requests/{signatureRequestId}/document_requests
+  description: "Add Signer Document Request to a Signature Request"
+  preservePropertyCasing: true
+  params:
+    - composition: CreateSignerDocumentRequest
+      name: body
+      comment: Non documenté
+
+    - name: signatureRequestId
+      domain: CODE
+      comment: Signature Request Id
+  returns:
+    composition: SignerDocumentRequest
+    name: Result
+    comment: Signer Document Request attached to a Signature Request

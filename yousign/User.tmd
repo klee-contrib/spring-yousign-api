@@ -1,0 +1,29 @@
+﻿####
+#### ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+####
+
+---
+module: yousign
+tags:
+  - client-api
+uses:
+  - yousign/Model
+---
+endpoint:
+  name: get-users
+  method: GET
+  route: users
+  description: "List Users"
+  preservePropertyCasing: true
+  params:
+    - name: after
+      domain: LIBELLE_100
+      comment: After cursor (pagination)
+
+    - name: limit
+      domain: NUMBER
+      comment: The limit of items count to retrieve.
+  returns:
+    composition: GetUsers200Response
+    name: Result
+    comment: Non documenté

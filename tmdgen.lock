@@ -1,0 +1,24 @@
+﻿#
+# ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+#
+
+version: 1.6.9
+generatedFiles:
+  - ./yousign/Approver.tmd
+  - ./yousign/AuditTrail.tmd
+  - ./yousign/Consumption.tmd
+  - ./yousign/Contact.tmd
+  - ./yousign/CustomExperience.tmd
+  - ./yousign/Document.tmd
+  - ./yousign/ElectronicSeal.tmd
+  - ./yousign/Field.tmd
+  - ./yousign/Follower.tmd
+  - ./yousign/Metadata.tmd
+  - ./yousign/Model.tmd
+  - ./yousign/SignatureRequest.tmd
+  - ./yousign/Signer.tmd
+  - ./yousign/SignerDocumentRequest.tmd
+  - ./yousign/Template.tmd
+  - ./yousign/User.tmd
+  - ./yousign/Webhook.tmd
+  - ./yousign/Workspace.tmd
